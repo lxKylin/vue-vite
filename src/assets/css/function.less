@@ -1,0 +1,77 @@
+// Suitable for webkit core and mobile
+.ellipsis-multiple(@num: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @num;
+}
+
+.ellipsis() {
+  white-space: nowrap; //不换行
+  overflow: hidden; //超出部分隐藏
+  text-overflow: ellipsis;
+}
+
+// Set width && height
+.set-size(@width, @height: @width) {
+  width: @width;
+  height: @height;
+}
+
+// Set min width && min height
+.set-min-size(@width, @height: @width) {
+  min-width: @width;
+  min-height: @height;
+}
+
+// common flex type
+.flex-type(@justify-type: flex-start, @direction: row) {
+  flex-direction: @direction;
+  display: flex;
+  align-items: center;
+  justify-content: @justify-type;
+}
+
+// set font size && color
+.font-style(@size, @color) {
+  font-size: @size;
+  color: @color;
+}
+
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
