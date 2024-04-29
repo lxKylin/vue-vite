@@ -1,17 +1,19 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createPinia } from 'pinia';
+import { createApp } from 'vue';
+
+// eslint-disable-next-line import/order
+import App from './App.vue';
 // css初始化
-import 'normalize.css'
-import './assets/css/index.less'
+import 'normalize.css';
+import './assets/css/index.less';
 
-import router from './router'
+import router from './router';
 
-import { createPinia } from 'pinia'
-const store = createPinia()
+const store = createPinia();
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
-app.use(store)
+app.use(router);
+app.use(store);
 
-app.mount('#app')
+app.mount('#app');

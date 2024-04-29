@@ -1,10 +1,11 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import path from 'path' //这个path用到了上面安装的@types/node
-const resolve = (dir: string) => path.join(__dirname, dir)
+import path from 'path'; //这个path用到了上面安装的@types/node
 
-const fePort = 1118
-const serverOrigin = 'http://localhost:1231'
+import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
+const resolve = (dir: string) => path.join(__dirname, dir);
+
+const fePort = 1118;
+const serverOrigin = 'http://localhost:1231';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -59,4 +60,4 @@ export default defineConfig({
       }
     }
   }
-})
+});

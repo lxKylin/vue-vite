@@ -20,8 +20,9 @@
       "jsx": true
     }
   },
-  "plugins": ["vue", "@typescript-eslint", "prettier"],
+  "plugins": ["vue", "@typescript-eslint", "prettier", "import"],
   "rules": {
+    "prettier/prettier": ["error", { "semi": true }],
     "vue/multi-word-component-names": "off", // 禁用vue文件强制多个单词命名
     "@typescript-eslint/no-explicit-any": ["off"], //允许使用any
     "@typescript-eslint/no-this-alias": [
@@ -40,6 +41,33 @@
       }
     ],
     "no-debugger": "warn", //提交时不允许有debugger
-    "vue/comment-directive": "off"
+    "vue/comment-directive": "off",
+    // 确保没有重复引入
+    "import/no-duplicates": "error",
+    // 确保 import 语句按照组分类并排序
+    "import/order": [
+      "error",
+      {
+        // builtin：内置模块;external：第三方模块;internal：内部引用;sibling：兄弟依赖;parent：父节点依赖;index：index 文件依赖;unknown：未知依赖
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+          "unknown"
+        ],
+        // newlines-between 不同组之间是否进行换行
+        "newlines-between": "always",
+        // alphabetize 根据字母顺序对每个组内的顺序进行排序
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }

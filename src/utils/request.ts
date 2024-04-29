@@ -1,34 +1,34 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const request = axios.create()
+const request = axios.create();
 
 // request interceptor
 request.interceptors.request.use(
   (config) => {
-    return config
+    return config;
   },
   (error) => {
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
-)
+);
 
 // response interceptor
 request.interceptors.response.use(
   (response) => {
     if (response.status !== 200 && response.status !== 201) {
-      return Promise.reject(response)
+      return Promise.reject(response);
     } else {
-      const data: any = response.data
+      const data: any = response.data;
       if (data.success) {
-        return data
+        return data;
       } else {
-        return Promise.reject(data)
+        return Promise.reject(data);
       }
     }
   },
   async (error) => {
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
-)
+);
 
-export default request
+export default request;
