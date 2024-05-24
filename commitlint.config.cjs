@@ -33,4 +33,4 @@ module.exports = {
     // <subject> 主要 message 不能为空
     'subject-empty': [2, 'never']
   }
-}
+};

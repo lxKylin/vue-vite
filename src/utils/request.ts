@@ -4,12 +4,8 @@ const request = axios.create();
 
 // request interceptor
 request.interceptors.request.use(
-  (config) => {
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (config) => config,
+  (error) => Promise.reject(error)
 );
 
 // response interceptor
@@ -26,9 +22,7 @@ request.interceptors.response.use(
       }
     }
   },
-  async (error) => {
-    return Promise.reject(error);
-  }
+  async (error) => Promise.reject(error)
 );
 
 export default request;
