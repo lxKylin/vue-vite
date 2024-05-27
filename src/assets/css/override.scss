@@ -1,0 +1,18 @@
+.el-date-editor {
+  --el-date-editor-width: 100%;
+}
+.el-date-editor > .el-input__wrapper {
+  width: var(--el-date-editor-width);
+}
+
+.el-tabs__nav-wrap:after {
+  height: 1px !important;
+}
+
+.el-form-item__label::after {
+  content: ':';
+}
+
+.ant-picker {
+  border-radius: 5px;
+}

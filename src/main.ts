@@ -9,7 +9,7 @@ import 'element-plus/dist/index.css';
 import App from './App.vue';
 // css初始化
 import 'normalize.css';
-import './assets/css/index.less';
+import './assets/css/index.scss';
 
 import router from './router';
 

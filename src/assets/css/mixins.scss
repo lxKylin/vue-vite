@@ -1,0 +1,40 @@
+// 定义常用的颜色值
+$color--primary: #0089ff;
+$color--secondary: lighten(#0089ff, 52%);
+
+$color--text_primary: #171a1d;
+$color--text_secondary: lighten(#171a1d, 40%);
+$color--text_description: lighten(#171a1d, 60%);
+$color--text_disabled: lighten(#171a1d, 76%);
+$color--text_stamp: lighten(#171a1d, 96%);
+
+$color--bg_primary: #ebebeb;
+$color--fg_primary: #ffffff;
+
+$color--line_light: #eeeeee;
+$color--line_hard: #dddddd;
+
+$color--hover: lighten(#000000, 92%);
+$color--press: lighten(#000000, 84%);
+$color-main: #409eff;
+$color-success: #67c23a;
+$color-warning: #e6a23c;
+$color-danger: #f56c6c;
+$color-info: #909399;
+
+$text-main: #303133;
+$text-normal: #606266;
+$text-minor: #909399; //次要文字,辅助文字
+$text-placeholder: #c0c4cc;
+$text-333: #333;
+
+$border-first: #dcdfe6;
+$border-second: #e4e7ed;
+$border-third: #ebeef5;
+$border-fourth: #f2f6fc;
+
+$content-bg-color: #fff;
+// 常用的混入
+@mixin border($direction) {
+  border-#{$direction}: 1px solid $color--line_light;
+}

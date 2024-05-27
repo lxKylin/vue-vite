@@ -3,7 +3,7 @@ import path from 'path'; //这个path用到了上面安装的@types/node
 import vue from '@vitejs/plugin-vue';
 // eslint-disable-next-line import/order
 import { defineConfig } from 'vite';
-const resolve = (dir: string) => path.join(__dirname, dir);
+// const resolve = (dir: string) => path.join(__dirname, dir);
 
 import AutoImport from 'unplugin-auto-import/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
@@ -49,15 +49,8 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      less: {
-        modifyVars: {
-          // 用于全局导入，以避免需要单独导入每个样式文件。
-          // reference:  避免重复引用
-          hack: `true; @import (reference) "${resolve(
-            'src/assets/css/index.less'
-          )}";`
-        },
-        javascriptEnabled: true
+      scss: {
+        additionalData: '@import "@/assets/css/mixins.scss";'
       }
     }
   },
